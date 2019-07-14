@@ -1,0 +1,22 @@
+chart {
+  svg {
+    direction: ltr;
+  }
+}
+[dir=rtl] {
+  chart {
+    svg {
+      direction: ltr !important;
+    }
+  }
+}
+
+.high-chart-linear-gauge span.highcharts-plot-band-label {
+  left: 15% !important;
+  right: 15% !important;
+}
+
+st-web-trend-chart {
+  max-width: 300px;
+  width: 100%;
+}

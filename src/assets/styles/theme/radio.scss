@@ -1,0 +1,43 @@
+@import "~@angular/material/theming";
+
+// only the font family is defined in the material theme typography
+@mixin st-radio-button-typography($config) {
+  .mat-radio-button {
+    font-size: mat-font-size($config, input);
+  }
+}
+
+@mixin st-radio-button-theme($theme) {
+  $primary: map-get($theme, primary);
+  $appColor: mat-color($primary, $st-default-color-shade);
+
+  mat-radio-button.mat-radio-button {
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+    .mat-radio-container,
+    .mat-radio-outer-circle, 
+    .mat-radio-inner-circle {
+        height: 16px;
+        width: 16px;
+      }
+    .mat-radio-label-content {
+      height: 30px;
+      line-height: 30px;
+    }
+    // We do not use accent color for these items - override with primary color
+    &.mat-accent.mat-radio-checked {
+      .mat-radio-outer-circle {
+        border-color: mat-color($primary);
+      }
+      .mat-radio-inner-circle {
+        background-color: mat-color($primary);
+      }
+    }
+  }
+  // Make sure the ripple color matches the theme
+  .mat-radio-button:not(.mat-radio-disabled).mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: mat-color($primary);
+  }
+
+}

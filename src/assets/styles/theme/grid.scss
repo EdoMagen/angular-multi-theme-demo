@@ -1,0 +1,182 @@
+@import '~@angular/material/theming';
+
+@mixin st-grid-theme($theme) {
+  $primary: map-get($theme, primary);
+  $appColor: mat-color($primary, $st-default-color-shade);
+  $warn: map-get($theme, warn);
+
+  .st-grid-border {
+    border-color: $appColor;
+  }
+  st-grid {
+    .ag-theme-material {
+      .ag-cell.st-error-cell {
+          color: mat-color($warn);
+          border-color: mat-color($warn);
+      }
+    }
+  }
+}
+
+
+///////////////////////////////////////////
+
+// TODO: Must be installed to import
+// @import "~ag-grid/dist/styles/ag-grid.css";
+// @import "~ag-grid/dist/styles/ag-theme-material.css";
+
+.ag-header-cell {
+  line-height: 18px !important;
+  border-right: 1px solid #e0e0e0 !important;
+
+  st-header-select {
+    line-height: 34px;
+
+    .mat-select-value-text {
+      color: rgba(0, 0, 0, 0.54)
+    }
+  }
+}
+.ag-cell {
+  line-height: 40px !important;
+}
+.ag-theme-material {
+  font: 14px 'Open Sans';
+}
+.ag-theme-material .ag-header {
+  font: 14px 'Open Sans';
+}
+.ag-theme-material .ag-ltr .ag-cell-focus {
+  border: 0px solid transparent !important;
+  border-right: 1px solid #e0e0e0 !important;
+}
+.ag-theme-material .ag-ltr .ag-cell-last-left-pinned {
+  border-right: 1px solid #e0e0e0 !important;
+}
+.ag-theme-material .ag-cell {
+  border-right: 1px solid #e0e0e0;
+}
+.ag-row-hover {
+  background-color: transparent !important;
+}
+st-grid {
+  .st-grid-expanded-row-container {
+    background-color: $superLightGray80;
+    box-shadow: 0 0 0 1px $superLightGray80;
+  }
+
+  st-request-result {
+    max-width: 80%;
+  }
+  .st-grid-border {
+    border-style: solid;
+  }
+  .mat-form-field-appearance-legacy {
+    .mat-form-field-infix {
+      padding-bottom: 0px;
+      padding-top: 0px;
+    }
+  }
+}
+
+st-grid .ag-theme-material .ag-cell-inline-editing {
+  height: 39px;
+  padding: 0px 10px 0px 10px;
+}
+st-test-result-list .ag-theme-material {
+  .ag-header-cell, .ag-cell, .ag-ltr .ag-cell-focus{
+      border-right: none !important;
+  }
+  .ag-header-cell-text {
+      font-size: 0.9em;
+      display: flex;
+      align-items: flex-end;
+      color: #5a7b93;
+  }
+  .ag-cell {
+      display: flex;
+      align-items: center;
+  }
+}
+
+.st-no-status-bar .ag-status-bar {
+  display: none !important;
+}
+
+.ag-theme-material .ag-stub-cell .ag-loading-text {
+  margin-top: 0px;
+}
+
+.ag-header-cell-text {
+  line-height: 34px;
+}
+
+.ag-theme-material {
+  .ag-icon-checkbox-checked:empty {
+    background-image: url('/assets/svg/blue-checkbox.svg');
+  }
+  .ag-icon-checkbox-indeterminate {
+    background-image: url('/assets/svg/blue-checkbox-indeterminate.svg');
+  }
+}
+
+.st-alternative-grid.ag-theme-material {
+  .ag-icon-checkbox-checked,.ag-icon-checkbox-unchecked {
+    background-size: 16px;
+  }
+  .ag-header-select-all {
+    position: relative;
+    left: -1px;
+  }
+  .ag-selection-checkbox {
+    display: block;
+  }
+  .ag-header-cell  {
+    line-height: 18px !important;
+    border-right: 1px solid $gridCellBorder !important;
+    background: $gridCellBorder;
+    color: $black;
+    font-weight: 700;
+    .ag-header-cell-text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .ag-header-cell-menu-button .ag-icon-menu {
+    height: 34px;
+  }
+  .ag-cell-focus, .ag-cell {
+    border: none !important;
+  }
+}
+
+.ag-full-width-viewport-wrapper {
+  padding-bottom: 0px !important;
+}
+
+// TODO: Remove after migration grid styles from labos
+//       and hide select in advanced search for single select
+.st-search-dialog-grid {
+  .ag-theme-material .ag-cell {
+    line-height: 32px !important;
+  }
+  &.st-patient-search-dialog-grid {
+    .ag-theme-material .ag-header-cell,
+    .ag-theme-material .ag-header-group-cell {  
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    .ag-theme-material .ag-cell {
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+
+    st-icon-renderer {
+      justify-content: center;
+    }
+  }
+}

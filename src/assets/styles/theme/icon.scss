@@ -1,0 +1,150 @@
+@import "~@angular/material/theming";
+
+@mixin st-icon-theme ($theme) {
+  $warn: map-get($theme, warn);
+  $primary: map-get($theme, primary);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $appColor: mat-color($primary, $st-default-color-shade);
+  $accent: map-get($theme, accent);
+  .st-icon {
+    color: mat-color($foreground, icon);
+  }
+  .material-icons {
+    @extend .st-icon;
+  }
+  .st-icon-contrast {
+    background-color: mat-color($foreground, icon);
+    color: mat-color($background, background);
+  }
+  // we need to put the icon specific colors after the standard color, since the theme is or could be defined after
+  // the normal scss definitions, we will define the shared class specific colors here, even if they are constant hex
+  // colors
+  .st-priority-high {
+    color: mat-color($warn, $st-default-color-shade);
+  }
+  .st-notifications-active {
+    color: $lightOrange;
+    &:hover {
+      color: $lightOrange !important;
+    }
+  }
+  .st-notifications-inactive {
+    color: $superLightGray70;
+    &:hover {
+      color: $superLightGray70 !important;
+    }
+  }
+  // this is used in cases where the button is like a toggle, where the selected is a color like the app color
+  .st-unmarked-icon {
+    color: #A9AAB1 !important; // for mat-icon
+  }
+  .st-icon-done {
+    color: mat-color($accent, 500);
+  }
+  .st-icon-partial {
+    color: $lightOrange;
+  }
+  .st-icon-not-done {
+    color: $superLightGray70;
+  }
+}
+
+
+
+
+
+//////////////////////////////////////////
+
+/* **********************************************************************/
+/* https://fonts.googleapis.com/icon?family=Material+Icons              */
+/* https://github.com/google/material-design-icons/tree/master/iconfont */
+/* **********************************************************************/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/material-icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+  local('MaterialIcons-Regular'),
+  url(/assets/fonts/material-icons/MaterialIcons-Regular.woff2) format('woff2'),
+  url(/assets/fonts/material-icons/MaterialIcons-Regular.woff) format('woff'),
+  url(/assets/fonts/material-icons/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.mat-form-field-suffix .mat-icon.material-icons {
+  font-size: 18px;
+}
+.st-icon-circle {
+  font-size: 22px;
+}
+.st-priority-high {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+}
+
+.st-notifications {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+  display: inline-flex;
+}
+
+.st-notifications-active {
+  @extend .st-notifications;
+}
+.st-notifications-inactive {
+  @extend .st-notifications;
+}
+// for typescript includes, will be defined in theme
+.st-icon {
+  background-color: transparent; // not used, but entered so compilation will work
+}
+
+// this is used in cases where the button is like a toggle, where the selected is a color like the app color
+.st-unmarked-icon {
+  color: #A9AAB1 !important; // for mat-icon
+}
+body {
+  &.app-language-he {
+    .mat-toolbar-row {
+      .material-icons {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
+    .sidemenu, .st-model-dialog {
+      .material-icons {
+        -webkit-transform:  scaleX(1);
+        transform:  scaleX(1);
+      }
+    }
+  }
+}

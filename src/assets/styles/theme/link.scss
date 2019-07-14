@@ -1,0 +1,19 @@
+@import "~@angular/material/theming";
+
+@mixin st-link-theme($theme) {
+  $primary: map-get($theme, primary);
+  $appPrimary: mat-color($primary);
+
+  a:not(.mat-button).st-text-link, .st-text-link {
+    color: $appPrimary !important;
+    mat-icon {
+      color: $appPrimary !important;
+    }
+    &:hover {
+      color: $appPrimary !important;
+      mat-icon {
+        color: $appPrimary !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.st-inline-alert {
+  min-height: 40px;
+  padding-left: 13px;
+  padding-right: 13px;
+  .st-inline-alert-text {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.st-inline-alert-information {
+  color: $alertInformationText;
+  background-color: $lightBlue60;
+}
+.st-inline-alert-attention {
+  color: $alertAttentionText;
+  background-color: $alertAttentionBackground;
+  .mat-icon {
+    font-size: 24px;
+    color: $alertAttentionText !important;
+    vertical-align: bottom;
+  }
+}

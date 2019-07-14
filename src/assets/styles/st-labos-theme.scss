@@ -1,0 +1,144 @@
+@import "~@angular/material/theming";
+@import './st-theme-base.scss';
+
+$labos-primary-palette: (
+    50: #dfe8e8,
+    100: #bed0d2,
+    200: #9db8bb,
+    300: #5c898e,
+    400: #46797e,
+    500: #266268,
+    600: #235b61,
+    700: #205359,
+    800: #1b4449,
+    900: #153639,
+    A100: #5cf0e3,
+    A200: #2becd8,
+    A400: #1fae9e,
+    A700: #0c8a8a,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+    );
+$labos-accent-palette: (
+    50: #e6f5e4,
+    100: #ceeac8,
+    200: #b5e0ac,
+    300: #9cd691,
+    400: #83cb75,
+    500: #5aba47,
+    600: #56b344,
+    700: #4d9e3c,
+    800: #438b35,
+    900: #316627,
+    A100: #cef0cb,
+    A200: #a9e6a3,
+    A400: #7fcd76,
+    A700: #43cb44,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+    );
+$labos-warn-palette: (
+    50: #fae0e0,
+    100: #f2b3b3,
+    200: #e98080,
+    300: #e04d4d,
+    400: #d92626,
+    500: #d20000,
+    600: #cd0000,
+    700: #c70000,
+    800: #c10000,
+    900: #b60000,
+    A100: #ffdfdf,
+    A200: #ffacac,
+    A400: #ff7979,
+    A700: #ff5f5f,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+    );
+
+$st-labos-primary-palette: mat-palette($labos-primary-palette);
+$st-labos-accent-palette: mat-palette($labos-accent-palette);
+$st-labos-warn-palette: mat-palette($labos-warn-palette);
+
+$st-labos-background: (
+    status-bar: mat-color($st-labos-primary-palette, 500), 
+    app-bar: mat-color($st-labos-primary-palette, 500), 
+    background: #FFFFFF, 
+    hover: #F9F9F9, 
+    card: #FFFFFF, 
+    dialog: #FFFFFF, 
+    card-hover: #F8F8F8, 
+    disabled-button: rgba(black, 0.12), 
+    raised-button: #FFFFFF, 
+    focused-button: $dark-focused, 
+    selected-button: rgba(51, 83, 115, 0.15), 
+    selected-disabled-button: map_get($mat-grey, 400), 
+    disabled-button-toggle: map_get($mat-grey, 200), 
+    unselected-chip: map_get($mat-grey, 300), 
+    disabled-list-option: map_get($mat-grey, 200)
+);
+
+$st-labos-foreground: (
+    base: #333333, 
+    divider: $dark-dividers, 
+    dividers: $dark-dividers, 
+    disabled: $dark-disabled-text, 
+    disabled-button: rgba(black, 0.26), 
+    disabled-text: $dark-disabled-text, 
+    hint-text: $dark-disabled-text, 
+    secondary-text: $dark-secondary-text, 
+    icon: mat-color($st-labos-primary-palette, 500), 
+    icons: mat-color($st-labos-primary-palette, 500), 
+    text: #333333, 
+    slider-min: rgba(black, 0.87), 
+    slider-off: rgba(black, 0.26), 
+    slider-off-active: rgba(black, 0.38)
+);
+
+// Define themes using our custom function with custom foreground / background palettes
+$st-labos-theme: st-theme-generator(
+    $st-labos-primary-palette, 
+    $st-labos-accent-palette, 
+    $st-labos-warn-palette, 
+    $st-labos-foreground, 
+    $st-labos-background
+);

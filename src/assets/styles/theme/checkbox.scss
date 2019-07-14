@@ -1,0 +1,118 @@
+@import '~@angular/material/theming';
+@import 'core/general';
+
+/* OLD VERSION FROM LABMD
+
+// @mixin st-checkbox-theme($theme) {
+//   $primary: map-get($theme, primary);
+//   $appColor: mat-color($primary, $st-default-color-shade);
+
+//   .mat-checkbox-indeterminate, .mat-checkbox-checked {
+//     // the default of mat-checkbox is to use the mat-accent color
+//     // we will never need this and will always use mat-primary
+//     &.mat-accent {
+//       .mat-checkbox-background {
+//         background-color: $appColor;
+//       }
+//     }
+//   }
+//   .mat-checkbox:not(.mat-checkbox-disabled) {
+//     &.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+//       background-color: mat-color($primary, 0.26);
+//     }
+//   }
+// }
+
+
+// .mat-checkbox-label:after {
+//   content: "\200E‎";
+// }
+// .mat-checkbox-label:before {
+//   content: "\200E‎";
+// }
+
+
+// .mat-checkbox-layout {
+//   display: block !important;
+// }
+
+// mat-checkbox.mat-checkbox-checked, mat-checkbox.mat-checkbox-checked {
+//   .mat-checkbox-background, .mat-checkbox-background {
+//     border-radius: 3px !important;
+//   }
+// }
+
+// .mat-checkbox-inner-container {
+//   width: 16px !important;
+//   height: 16px !important;
+// }
+
+// .mat-checkbox-inner-container {
+//   height: 16px !important;
+//   width: 16px !important;
+//   .mat-checkbox-frame {
+//     border-radius: 3px !important;
+//   }
+//   .mat-checkbox-checkmark {
+//     width: 16px;
+//   }
+// }
+
+// .mat-checkbox-frame, .mat-checkbox-frame {
+//   width: 16px !important;
+//   height: 16px !important;
+// }
+
+// .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-frame {
+//   border-color: #b0b0b0 !important;
+// }
+
+// .mat-checkbox:not(.mat-checkbox-disabled):not(.mat-checkbox-checked) .mat-checkbox-frame {
+//   border-color: #A9AAB1 !important;
+// }
+
+// mat-checkbox.mat-checkbox-checked.mat-checkbox-disabled .mat-checkbox-background {
+//   background-color: #b0b0b0 !important;
+// }
+
+*/
+
+//////////////////////////////////////////////////////////////////////
+
+@mixin st-checkbox-theme($theme) {
+  $primary: map-get($theme, primary);
+  $appColor: mat-color($primary, $st-default-color-shade);
+
+  mat-checkbox {
+    cursor: default !important; // prevent cursor: pointer in flex column layout
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+    .mat-checkbox-inner-container {
+      width: 16px;
+      height: 16px;
+      cursor: pointer !important; // override default cursor in internal parts
+    }
+    .mat-checkbox-layout .mat-checkbox-label {
+      height: 30px;
+      line-height: 30px;
+      cursor: pointer !important; // override default cursor in internal parts
+    }
+  }
+
+  .mat-checkbox-indeterminate, .mat-checkbox-checked {
+    // the default of mat-checkbox is to use the mat-accent color
+    // we will never need this and will always use mat-primary
+    &.mat-accent {
+      .mat-checkbox-background {
+        background-color: $appColor;
+      }
+    }
+  }
+
+  .mat-checkbox:not(.mat-checkbox-disabled) {
+    &.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+      background-color: mat-color($primary);
+    }
+  }
+}

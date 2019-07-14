@@ -1,0 +1,113 @@
+@import "~@angular/material/theming";
+@import 'core/general';
+
+@mixin st-text-theme($theme) {
+  $warn: map-get($theme, warn);
+  $primary: map-get($theme, primary);
+  $appPrimary: mat-color($primary);
+  $foreground: map-get($theme, foreground);
+
+  h1 {
+    color: $appPrimary !important;
+  }
+
+  .st-text-error {
+    color: mat-color($warn);
+  }
+
+  .st-error-message {
+    @extend .st-text-error;
+  }
+
+  .st-text-normal {
+    color: mat-color($foreground, text);
+  }
+  .st-text-primary {
+    color: $appPrimary;
+  }
+  .st-title-large {
+    @extend .st-text-primary;
+    font-weight: 600;
+  }
+  .st-title-default {
+    @extend .st-text-primary;
+  }
+  .st-subheader-title {
+    @extend .st-text-primary;
+  }
+  .st-order-name {
+    color: $appPrimary;
+  }
+  .st-space-after:after {
+    content: ' ';
+  }
+}
+
+@mixin st-text-typography($typography) {
+
+  span {
+    font-family: mat-font-family($typography, input);
+  }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@import 'core/general';
+@import 'core/helpers';
+
+//=====================
+//=  #general styles  =
+//=====================
+
+.st-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//=====================
+//=       #FONTS     =
+//=====================
+
+.st-text-bold {
+  font-weight: 700;
+}
+
+.st-text-normal {
+  font-weight: 400;
+}
+
+.st-text-semibold {
+  font-weight: 700;
+}
+
+.st-error-message {
+  @extend .st-font-weight-600;
+  font-size: 12px;
+}
+
+.st-result-approved {
+  color: #058819;
+}
+.st-title-large {
+  @extend .st-text-semibold;
+  font-size: $fontSizeLarge;
+}
+.st-title-default {
+  @extend .st-text-semibold;
+  font-size: $fontSizeHeaderDefault;
+}
+.st-subheader-title {
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.st-text-align-center {
+  text-align: center
+}
+
+.st-order-name {
+  cursor: pointer;
+}

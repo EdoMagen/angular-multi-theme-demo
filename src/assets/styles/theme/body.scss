@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+@mixin st-body-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  body {
+    color: mat-color($foreground, text);
+    background-color: mat-color($background, background);
+  }
+}
+
+@mixin st-body-typography($typography) {
+  // the normal topography does not define non-material tags
+  body {
+    font-size: mat-font-size($typography, body-1);
+    font-family: mat-font-family($typography, body-1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

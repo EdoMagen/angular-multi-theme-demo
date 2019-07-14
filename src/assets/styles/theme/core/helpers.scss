@@ -1,0 +1,281 @@
+@import "colors";
+@import "general";
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.st-cursor-default {
+  cursor: default !important;
+}
+
+// .pointer is deprecated.
+.pointer, .st-cursor-pointer {
+  cursor: pointer !important;
+}
+
+.st-visibility-hidden {
+  visibility: hidden !important;
+}
+
+.st-no-items {
+  font-weight: 600;
+  padding: 2 * $baseSpacing;
+}
+
+// TODO: remove .bold and .st-text-bold
+.st-font-weight-600, .bold, .st-text-bold {
+  font-weight: 600;
+}
+
+// TODO: review, why :hover?
+.st-text-color-dark-cyan {
+  color: $darkCyan;
+
+  &:hover {
+    color: $darkCyan;
+  }
+}
+
+.st-ellipsis {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.st-highlight {
+  color: $gray;
+  background-color: $yellow;
+}
+
+.st-error {
+  color: $redError;
+  position: absolute;
+  font-size: 12px;
+}
+
+.st-error-message {
+  font-size: 12px;
+  font-weight: 400;
+  color: $redError;
+
+  &.no-bold {
+    font-weight: 400;
+  }
+}
+
+.no-panel-body-padding {
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+}
+
+
+.material-icons {
+  &.size-18 {
+    @include st-icon-size(18px);
+  }
+
+  &.size-22 {
+    @include st-icon-size(22px);
+  }
+
+  &.size-24 {
+    @include st-icon-size(24px);
+  }
+
+  &.size-28 {
+    @include st-icon-size(28px);
+  }
+
+  &.size-32 {
+    @include st-icon-size(32px);
+  }
+
+  &.size-40 {
+    @include st-icon-size(40px);
+  }
+}
+
+.st-layout-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.st-layout-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.st-text-color-light-gray {
+  color: $superLightGray05;
+}
+
+.st-text-color-red {
+  color: $red !important;
+}
+
+.st-flex-grow-1 {
+  flex-grow: 1;
+}
+
+.st-font-12 {
+  font-size: $fontSizeSmall !important;
+}
+
+.st-font-14 {
+  font-size: $fontSizeHeaderDefault !important;
+}
+
+.st-font-16 {
+  font-size: $fontSizeLarge !important;
+}
+
+.st-font-18 {
+  font-size: $fontSizeHeader2 !important;
+}
+
+.st-font-weight-700 {
+  font-weight: 700;
+}
+
+.st-display-none {
+  display: none !important;
+}
+
+.st-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.st-comma-separated {
+  &:not(:last-child) {
+    &:after {
+      content: ", ";
+    }
+  }
+}
+
+.st-content-container {
+  padding: 20px;
+}
+
+.st-warn-color {
+  color: $lightOrange20 !important;
+}
+
+.st-background-super-light-gray {
+  background-color: $superLightGray;
+}
+
+.st-color-dark-black {
+  color: $darkBlack !important;
+}
+
+.st-color-light-gray {
+  color: $lightGray40;
+}
+
+.st-color-white {
+  color: $white !important;
+}
+
+.st-slide-color {
+  color: $blue30;
+}
+
+.st-block-color {
+  color: $stmsGreen;
+}
+
+.st-sample-color {
+  color: $lightPink;
+}
+
+.st-order-color {
+  color: $darkCyan;
+}
+
+.st-no-padding {
+  padding: 0;
+}
+
+.st-opacity-0 {
+  opacity: 0;
+}
+
+.st-vertical-align-middle {
+  vertical-align: middle;
+}
+
+//  Scroll
+.st-overflow-auto {
+  overflow: auto !important;
+}
+
+.st-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.st-overflow-x-scroll {
+  overflow-x: scroll !important;
+}
+
+.st-overflow-y-scroll {
+  overflow-y: scroll !important;
+}
+
+.st-position-relative {
+  position: relative !important;
+}
+
+.st-text-center {
+  text-align: center;
+}
+
+.st-height-30px {
+  height: 30px;
+}
+
+//TODO: refactor this with .st-bold and .bold:
+.st-text-bold {
+  font-weight: 700;
+}
+
+.st-border-radius-50 {
+  border-radius: 50% !important;
+}
+
+html[dir="rtl"] {
+  .st-flip-on-rtl {
+    transform: rotateY(180deg)
+  }
+  .st-flip-on-ltr {
+    direction: ltr;
+    text-align: right;
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////
+
+.st-flex-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.st-flex-row {
+  flex-wrap: wrap;
+  display: flex;
+}
+.st-visibility-hidden {
+  visibility: hidden;
+}
+.st-content {
+  padding: 5px;
+}
+.w-100 {
+  width: 100%;
+}

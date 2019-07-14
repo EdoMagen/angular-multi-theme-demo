@@ -1,0 +1,52 @@
+@import "assets/styles/theme/_index.scss"; // Import all component mixins
+@import "assets/styles/theme/core/st-mat-typography.scss";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat-core($stms-typography); // currently used
+@include mat-core($general-typography); // suggested
+
+// Typography overrides or definitions where angular material failed to do so
+@include st-body-typography($general-typography);
+@include st-form-typography($general-typography);
+@include st-radio-button-typography($general-typography);
+@include st-text-typography($general-typography);
+@include st-list-typography($general-typography);
+
+// Instead of creating a theme with mat-light-theme like a sane person, 
+// we will create our own theme-creating function that lets us apply our own 
+// foreground and background palettes.
+@function st-theme-generator($primary, $accent, $warn, $foreground-palette, $background-palette) {
+  @return (primary: mat-palette($primary), 
+           accent: mat-palette($accent), 
+           warn: mat-palette($warn), 
+           is-dark: false, 
+           foreground: $foreground-palette, 
+           background: $background-palette);
+}
+
+@mixin st-theme($theme) {
+  /* Initialize the theme */
+  @include angular-material-theme($theme); 
+  /* Theme mixins */
+  @include st-icon-theme($theme);
+  @include st-body-theme($theme);
+  @include st-toolbar-theme($theme);
+  @include st-list-theme($theme);
+  @include st-progress-theme($theme);
+  @include st-radio-button-theme($theme);
+  @include st-menu-theme($theme);
+  @include st-button-theme($theme);
+  @include st-select-theme($theme);
+  @include st-autocomplete-theme($theme);
+  @include st-dialog-theme($theme);
+  @include st-checkbox-theme($theme);
+  @include st-side-menu-theme($theme);
+  @include st-text-theme($theme);
+  @include st-input-theme($theme);
+  @include st-textarea-theme($theme);
+  @include st-form-theme($theme);
+  @include st-grid-theme($theme);
+  @include st-tabs-theme($theme);
+}

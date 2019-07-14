@@ -1,0 +1,46 @@
+@import "~@angular/material/_theming";
+
+@mixin st-input-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  input:-webkit-autofill {
+    /* due to Chrome user agent definitions that override the above definitions*/
+    color: mat-color($foreground, text);
+    background-color: mat-color($background, background);
+  }
+  // Hide star (*) required indicator no matter what the markup says
+  .mat-form-field-required-marker {
+    display: none;
+  }
+  // Use our own indication for mandatory form fields
+  input[required] ~ span.mat-form-field-label-wrapper {
+    background: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSJyZ2IoMjIxLDQ0LDApIiBoZWlnaHQ9IjI0IiB3aWR0aD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWF4WU1heCI+ICAgIDxwYXRoIGQ9Ik0yIDI3aDI0VjN6Ii8+ICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=") no-repeat;
+    background-size: 10px;
+    background-position: 100% 98%;
+  }
+  // use flipped svg for RTL - need to get rid of duplicate code
+  [dir=rtl] {
+    input[required] ~ span.mat-form-field-label-wrapper {
+      background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNkZDJjMDA7fS5jbHMtMntmaWxsOm5vbmU7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5BcnRib2FyZCAxPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0tMS4xOCwxLjV2MjRoMjRaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNLTIuMTgsMS41aDI0djI0aC0yNFoiLz48L3N2Zz4=") no-repeat;
+      background-size: 10px;
+      background-position: 0 98%;
+    }
+  }
+}
+
+/////////////////////////////////////////////
+
+.st-show-hide-password {
+  right: 0;
+}
+
+input {
+  outline: none;
+}
+
+mat-form-field.st-no-inactive-underline{
+  .mat-form-field-underline {
+    display: none;
+  }
+}

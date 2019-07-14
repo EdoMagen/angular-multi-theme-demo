@@ -1,0 +1,59 @@
+mat-sidenav-container.labmd {
+  // probably never gonna use this one 🥳
+}
+
+.mat-toolbar {
+  height: 50px;
+}
+
+// spinners
+.example-spinners {
+  .st-flex-row {
+      margin-top: 10px;
+      align-items: center;
+  }
+  mat-progress-spinner {
+    margin-left: 15px;
+  }
+}
+
+
+///////////////////////////////////
+// Move these to a proper file
+//
+
+.st-content mat-card {
+  margin: 5px;
+}
+
+.st-sidenav {
+  min-width: 200px;
+}
+
+.st-toolbar-filler {
+  flex: 1 1 auto;
+}
+
+.st-progress {
+  margin: 5px;
+}
+
+.example-h2 {
+  margin: 10px 0;
+  color: rgba(0,0,0,.54);
+}
+
+.example-h3 {
+  color: rgba(0,0,0,0.54);
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.st-sidebar-button {
+  width: inherit;
+}

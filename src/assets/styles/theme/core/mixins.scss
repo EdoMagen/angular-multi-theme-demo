@@ -1,0 +1,278 @@
+@mixin st-no-margin {
+  margin: 0px;
+}
+
+@mixin st-no-padding {
+  padding: 0px;
+}
+
+@mixin st-no-border {
+  border: 0;
+}
+
+@mixin st-no-border-darius {
+  border-radius: 0;
+}
+
+@mixin st-no-box-shadow {
+  box-shadow: none;
+}
+
+@mixin st-no-text-transform {
+  text-transform: none;
+}
+
+@mixin st-no-list-style {
+  list-style: none;
+}
+
+@mixin st-full-screen {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin st-fixed-width($width) {
+  min-width: $width;
+  width: $width;
+}
+
+@mixin st-element-color($backgroundColor, $color) {
+  background: $backgroundColor;
+  color: $color;
+}
+
+@mixin st-element-size($elWidth, $elHeight) {
+  height: $elHeight;
+  width: $elWidth;
+}
+
+@mixin st-element-overflow($overflowX, $overflowY) {
+  overflow-x: $overflowX;
+  overflow-y: $overflowY;
+}
+
+@mixin st-pull-right {
+  position: absolute;
+  right: $baseContainerSpacing;
+}
+
+@mixin st-vertical-align-center {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin st-icon-circular($diameter, $borderRadius) {
+  @include st-element-size($diameter, $diameter);
+
+  min-width: $diameter;
+  border-radius: $borderRadius;
+}
+
+@mixin st-svg-icon($width, $height, $url) {
+  width: $width;
+  height: $height;
+  background: url($url);
+  background-repeat: no-repeat;
+}
+
+@mixin st-svg-background($size, $url) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin text-elipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+@mixin placeholder-color($color) {
+  input::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  input:-moz-placeholder {
+    color: $color;
+  }
+
+  input::-moz-placeholder {
+    color: $color;
+  }
+
+  input:-ms-input-placeholder {
+    color: $color !important;
+  }
+}
+
+@mixin placeholder-font-weight($weight) {
+  input::-webkit-input-placeholder {
+    font-weight: $weight !important;
+  }
+
+  input:-moz-placeholder {
+    font-weight: $weight !important;
+  }
+
+  input::-moz-placeholder {
+    font-weight: $weight !important;
+  }
+
+  input:-ms-input-placeholder {
+    font-weight: $weight !important;
+  }
+}
+
+@mixin placeholder-font-size($size) {
+  input::-webkit-input-placeholder {
+    font-size: $size !important;
+  }
+
+  input:-moz-placeholder {
+    font-size: $size !important;
+  }
+
+  input::-moz-placeholder {
+    font-size: $size !important;
+  }
+
+  input:-ms-input-placeholder {
+    font-size: $size !important;
+  }
+}
+
+//// build buttons ////
+@mixin st-button($backgroundColor, $backgroundColorHover, $borderColor, $borderColorHover, $textColor) {
+  background-color: $backgroundColor;
+  border: $borderBaseSize solid $borderColor;
+  color: $textColor;
+  line-height: 25px;
+  padding-right: 12px;
+  padding-left: 12px;
+
+  &:hover {
+    background-color: $backgroundColorHover !important;
+  }
+
+  md-icon, i {
+    color: $textColor !important;
+    line-height: 14px;
+    margin-right: 2px;
+  }
+
+  md-icon.md-18 {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@mixin st-button-disable($backgroundColor, $borderColor, $textColor) {
+  opacity: 0.4;
+  cursor: default;
+  background-color: $backgroundColor !important;
+  color: $textColor !important;
+
+  &:hover {
+    background-color: $backgroundColor !important;
+    border-color: $borderColor !important;
+  }
+}
+
+@mixin st-button-focused($backgroundColor, $textColor) {
+  background-color: $backgroundColor !important;
+  color: $textColor !important;
+}
+
+//// end build buttons ////
+
+@mixin st-linear-gradient($direction, $directionIE, $colorStart, $colorEnd) {
+  background: -webkit-linear-gradient($direction, $colorStart 0%, $colorEnd 25%, $colorEnd 100%);
+  background: linear-gradient($directionIE, $colorStart 0%, $colorEnd 25%, $colorEnd 100%);
+}
+
+/// borders ///
+@mixin st-box-shadow-inset($size, $color) {
+  box-shadow: inset 0 0 0 $size $color;
+}
+
+@mixin st-border {
+  border: $borderBaseSize solid $borderColor;
+}
+
+/// layouts ///
+@mixin st-column-count($count) {
+  -moz-column-count: $count;
+  -webkit-column-count: $count;
+  column-count: $count;
+}
+
+@mixin st-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+}
+
+@mixin background($imgpath, $position: right) {
+  background: {
+    image: url($imgpath);
+    position: $position;
+    repeat: no-repeat;
+  };
+}
+
+@mixin size($height, $width, $important: false) {
+  width: $width;
+
+  @if $important == true {
+    height: $height !important;
+  }
+  @else {
+    height: $height;
+  }
+}
+
+@mixin st-border-vertical-only {
+  border-bottom: $borderBaseSize solid $borderColor;
+  border-top: $borderBaseSize solid $borderColor;
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+@mixin flexrow {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row !important;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}

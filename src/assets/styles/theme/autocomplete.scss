@@ -1,0 +1,19 @@
+@import "~@angular/material/theming";
+
+@mixin st-autocomplete-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  .st-secondary-text {
+    color: mat-color($foreground, secondary-text);
+  }
+  .st-search-icon{
+    color: #999999;
+  }
+  .st-inactive-item{
+    color: #999999;
+  }
+  .mat-option {
+    &:focus:not(.mat-option-disabled) {
+      background: #eeeeee
+    }
+  }
+}

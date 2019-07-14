@@ -1,0 +1,22 @@
+@import "~@angular/material/theming";
+@import 'core/general';
+
+@mixin st-menu-theme($theme) {
+  $primary: map-get($theme, primary);
+  $appColor: mat-color($primary, $st-default-color-shade);
+  .mat-menu-panel {
+    .mat-menu-content:not(:empty){
+      padding: 0;
+    }
+    .mat-menu-item .mat-icon:not([color]) {
+      color: rgba(black, 0.54)
+    }
+  }
+  // used?
+  // mat-menu-item.current {
+  //   background-color: $superLightGray105;
+  //   color: $appColor;
+  // }
+
+}
+

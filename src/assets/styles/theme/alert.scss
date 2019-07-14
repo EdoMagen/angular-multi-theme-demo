@@ -1,0 +1,24 @@
+.st-alert {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-radius: 3px;
+  padding: 7px 10px;
+  margin-top: 1px;
+  font-size: 14px;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.st-alert-warning {
+  background-color: #fcf8e3;
+  border: 1px solid #e6d0a1;
+  color: #8a6c3a;
+}
+
+.st-alert-full-width {
+  display: -ms-flexbox;
+  display: flex;
+}

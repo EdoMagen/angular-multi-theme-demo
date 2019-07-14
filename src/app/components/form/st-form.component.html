@@ -1,0 +1,16 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput required placeholder="Email" [formControl]="emailFormControl" autocomplete="off"
+           [errorStateMatcher]="matcher">
+    <mat-hint>Hint: errors will appear instantly</mat-hint>
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Error #1 - This is a very long error to indicate that you have to enter a valid email address - please do that.
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Error #2 - Email is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.value.length < 10">
+      Error #3 - Length must be over 10 characters
+    </mat-error>
+  </mat-form-field>
+</form>

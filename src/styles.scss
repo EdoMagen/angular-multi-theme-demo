@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+// @import 'angular-material-demo-theme.scss';
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+@import 'assets/styles/st-labmd-theme.scss';
+@import 'assets/styles/st-labos-theme.scss';
+// For the purpose of this example we import both themes, but in practice we will 
+// use the st-x-theme.scss files with the following line added to them (with the relevant theme of course)
+@include st-theme($st-labos-theme);
+.labmd {
+  @include st-theme($st-labmd-theme);
+}

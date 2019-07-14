@@ -1,0 +1,42 @@
+@import "~@angular/material/theming";
+
+@mixin st-side-menu-theme($theme) {
+  $background: map-get($theme, background);
+  .st-side-menu {
+    mat-list-item {
+      color: $gray;
+      mat-icon {
+        color: $superLightGray05;
+      }
+      &:hover {
+        background-color: mat-color($background, hover);
+      }
+      &[active=true] {
+        color: mat-color($background, app-bar);
+        mat-icon {
+          color: mat-color($background, app-bar);
+        }
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.st-side-menu {
+  mat-list-item {
+    .mat-list-item-content {
+      font-size: 16px;
+    }
+    mat-icon {
+      padding-right: 42px;
+    }
+  }
+}
+
+.mat-sidenav-focus-trap > .cdk-focus-trap-content {
+  overflow: hidden !important;
+}
+.mat-drawer-container {
+  height: inherit;
+}

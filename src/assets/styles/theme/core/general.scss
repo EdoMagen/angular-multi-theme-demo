@@ -1,0 +1,102 @@
+@import "general";
+
+//=====================
+//=     #SPACING     =
+//
+// 0 - for classes that eliminate the margin or padding by setting it to 0
+// 1 - for classes that set the margin or padding to $stSpacer * .25
+// 2 - for classes that set the margin or padding to $stSpacer * .5
+// 3 - for classes that set the margin or padding to $stSpacer * .75
+// 4 - for classes that set the margin or padding to $stSpacer
+// 5 - for classes that set the margin or padding to $stSpacer * 1.25
+// 6 - for classes that set the margin or padding to $stSpacer * 1.5
+// 7 - for classes that set the margin or padding to $stSpacer * 1.75
+// 8 - for classes that set the margin or padding to $stSpacer * 2
+// auto - for classes that set the margin to auto
+//
+// EXAMPLES:
+// .st-mt-0
+//   margin-top: 0 !important
+//
+// .st-px-2
+//   padding-left: ($stSpacer * .5) !important
+//   padding-right: ($stSpacer * .5) !important
+//
+// .st-p-4
+//   padding: $stSpacer !important
+//
+// Bootstrap documentation for spacing
+// https://getbootstrap.com/docs/4.0/utilities/spacing/
+//=====================
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $stSpacers {
+    .st-#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+
+    .st-#{$abbrev}t-#{$size},
+    .st-#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+
+    [dir=ltr] .st-#{$abbrev}r-#{$size},
+    [dir=ltr] .st-#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+
+    [dir=rtl] .st-#{$abbrev}r-#{$size},
+    [dir=rtl] .st-#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+
+    .st-#{$abbrev}b-#{$size},
+    .st-#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+
+    [dir=ltr] .st-#{$abbrev}l-#{$size},
+    [dir=ltr] .st-#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+
+    [dir=rtl] .st-#{$abbrev}l-#{$size},
+    [dir=rtl] .st-#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+  }
+}
+
+.st-m-auto {
+  margin: auto !important;
+}
+
+.st-mt-auto,
+.st-my-auto {
+  margin-top: auto !important;
+}
+
+[dir=ltr] .st-mr-auto,
+[dir=ltr] .st-mx-auto {
+  margin-right: auto !important;
+}
+
+[dir=rtl] .st-mr-auto,
+[dir=rtl] .st-mx-auto {
+  margin-left: auto !important;
+}
+
+.st-mb-auto,
+.st-my-auto {
+  margin-bottom: auto !important;
+}
+
+[dir=ltr] .st-ml-auto,
+[dir=ltr] .st-mx-auto {
+  margin-left: auto !important;
+}
+
+[dir=rtl] .st-ml-auto,
+[dir=rtl] .st-mx-auto {
+  margin-right: auto !important;
+}

@@ -1,0 +1,17 @@
+@import 'core/general';
+
+.st-filter-area {
+  background-color: #F2F2F2;
+}
+
+.st-container-divider {
+  border-bottom: $borderBaseSize solid $superLightGray10;
+}
+
+.st-container-divider-right {
+  border-right: $borderBaseSize solid $superLightGray10;
+}
+
+.st-container-divider-top {
+  border-top: $borderBaseSize solid $superLightGray10;
+}

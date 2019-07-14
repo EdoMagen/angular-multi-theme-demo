@@ -1,0 +1,18 @@
+@import "~@angular/material/theming";
+@import 'core/general';
+// @import '_colors';
+
+@mixin st-toolbar-theme($theme) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  mat-toolbar.mat-toolbar {
+    background-color: mat-color($background, app-bar);
+    color: mat-color($background, background);
+    button.mat-button .material-icons {
+      color: lighten(mat-color($primary), 50%);
+      // color: $cyan100;
+      font-size: 24px;
+    }
+  }
+}

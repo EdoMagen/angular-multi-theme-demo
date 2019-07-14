@@ -1,0 +1,24 @@
+.mat-datepicker-toggle {
+  font-size: 18px
+}
+
+
+.datepicker__calendar {
+  left: inherit !important;
+  right: 0px !important;
+  height: 19.25em !important;
+}
+
+.datepicker__calendar__cancel {
+  display: none !important;
+}
+
+st-datetime-field {
+  st-time-picker .mat-form-field-infix{
+      height: 42px;
+      input, button {
+          position: relative;
+          top: -2px;
+      }
+  }
+}

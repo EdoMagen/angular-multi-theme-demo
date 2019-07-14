@@ -1,0 +1,144 @@
+@import "~@angular/material/theming";
+@import './st-theme-base.scss';
+
+$labmd-primary-palette: (
+    50: #BBC6D0,
+    100: #788DA2,
+    200: #698198,
+    300: #59738D,
+    400: #476481,
+    500: #335373,
+    600: #325272,
+    700: #2D4864,
+    800: #28425B,
+    900: #243A51,
+    A100: #F6F6F6,
+    A200: #EEEEEE,
+    A400: #F2F2F2,
+    A700: #DDDDDD,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+);
+$labmd-accent-palette: (
+    50: #EBF7E9,
+    100: #CEEAC8,
+    200: #ADDDA3,
+    300: #8CCF7E,
+    400: #73C463,
+    500: #5ABA47,
+    600: #52B340,
+    700: #38A938,
+    800: #51A740,
+    900: #339833,
+    A100: #D4FFCF,
+    A200: #A7FF9C,
+    A400: #79FF69,
+    A700: #62FF50,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #000000,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+);
+$labmd-warn-palette: (
+    50: #FAE0E0,
+    100: #F2B3B3,
+    200: #E98080,
+    300: #E04D4D,
+    400: #D92626,
+    500: #D20000,
+    600: #CC202E,
+    700: #C70000,
+    800: #C10000,
+    900: #B11622,
+    A100: #FFDFDF,
+    A200: #FFACAC,
+    A400: #FF7979,
+    A700: #FF5F5F,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #000000,
+        A700: #000000)
+);
+
+$st-labmd-primary-palette: mat-palette($labmd-primary-palette);
+$st-labmd-accent-palette: mat-palette($labmd-accent-palette);
+$st-labmd-warn-palette: mat-palette($labmd-warn-palette);
+
+$st-labmd-background: (
+    status-bar: mat-color($st-labmd-primary-palette, 500), 
+    app-bar: mat-color($st-labmd-primary-palette, 500), 
+    background: #FFFFFF, 
+    hover: #F9F9F9, 
+    card: #FFFFFF, 
+    dialog: #FFFFFF, 
+    card-hover: #F8F8F8, 
+    disabled-button: rgba(black, 0.12), 
+    raised-button: #FFFFFF, 
+    focused-button: $dark-focused, 
+    selected-button: rgba(51, 83, 115, 0.15), 
+    selected-disabled-button: map_get($mat-grey, 400), 
+    disabled-button-toggle: map_get($mat-grey, 200), 
+    unselected-chip: map_get($mat-grey, 300), 
+    disabled-list-option: map_get($mat-grey, 200)
+);
+
+$st-labmd-foreground: (
+    base: #333333, 
+    divider: $dark-dividers, 
+    dividers: $dark-dividers, 
+    disabled: $dark-disabled-text, 
+    disabled-button: rgba(black, 0.26), 
+    disabled-text: $dark-disabled-text, 
+    hint-text: $dark-disabled-text, 
+    secondary-text: $dark-secondary-text, 
+    icon: mat-color($st-labmd-primary-palette, 500), 
+    icons: mat-color($st-labmd-primary-palette, 500), 
+    text: #333333, 
+    slider-min: rgba(black, 0.87), 
+    slider-off: rgba(black, 0.26), 
+    slider-off-active: rgba(black, 0.38)
+);
+
+// Define themes using our custom function with custom foreground / background palettes
+$st-labmd-theme: st-theme-generator(
+    $st-labmd-primary-palette, 
+    $st-labmd-accent-palette, 
+    $st-labmd-warn-palette, 
+    $st-labmd-foreground, 
+    $st-labmd-background
+);

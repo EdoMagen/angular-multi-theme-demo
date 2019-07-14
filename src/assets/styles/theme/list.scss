@@ -1,0 +1,134 @@
+@import "~@angular/material/theming";
+
+@mixin st-list-theme($theme) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+  .mat-list.st-no-list-header {
+    mat-list-item:first-child {
+      border-top-color: mat-color($primary, $st-default-divider-color-hue);
+    }
+  }
+  mat-list-item:not(.st-loading-container) {
+    border-top-color: mat-color($primary, $st-default-divider-color-hue);
+    border-bottom-color: mat-color($primary, $st-default-divider-color-hue);
+    &.st-loading-container {
+      background-color: mat-color($primary, A100);
+    }
+    &.st-viewed-background {
+      background-color: mat-color($background, card);
+    }
+    &:hover {
+      background-color: mat-color($background, card-hover);
+    }
+    &[active=true] {
+      background-color: mat-color($background, selected-button);
+    }
+  }
+}
+
+@mixin st-list-typography($typography) {
+  // span does not get the default, so we give it here
+  // we can't make it global, because there are places we don't want to
+  .mat-list {
+    .mat-list-item {
+      font-size: mat-font-size($typography, input);
+      font-family: mat-font-family($typography, input);
+    }
+  }
+}
+
+
+///////////////////////////////////////////////////////////////
+
+@import 'container';
+
+ul {
+  margin: 10px 0 0;
+  padding: 0 0 0 20px;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+mat-list mat-list-item .mat-list-item {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+}
+.mat-list-item .mat-list-item-content {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+}
+
+mat-list {
+  @include size(100%, 100%);
+  mat-list-item .mat-list-item {
+    @include size(100%, 100%, true);
+  }
+  &.mat-list .mat-list-item {
+    height: auto;
+  }
+}
+
+.mat-list-item .mat-list-item-content {
+  @include size(100%, 100%, true);
+}
+
+mat-list-item {
+  .mat-list-item-ripple {
+    border-right: none !important;
+  }
+}
+
+mat-list {
+  &.st-list {
+    mat-list-item {
+      &.st-list-header-title {
+        @extend .st-container-divider;
+        margin-left: 0px;
+        height: 40px;
+        color: $darkGray;
+        cursor: default;
+        font-weight: 700;
+        background-color: #eeeeee;
+        div {
+          height: 40px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+      &.st-list-line {
+        height: 40px;
+        @extend .st-container-divider;
+
+        div {
+          height: 40px;
+          padding-left: 10px;
+          padding-right: 10px;
+          @extend .st-container-divider-right;
+          &:last-child {
+            border-right: none;
+          }
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+    &.st-no-list-header {
+      mat-list-item:first-child {
+        @extend .st-container-divider-top;
+      }
+    }
+    &.st-no-cell-border-vertical {
+      mat-list-item {
+        &.st-list-line {
+          div {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}
