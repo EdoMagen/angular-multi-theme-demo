@@ -68,10 +68,12 @@ export class AppComponent {
   toggleDirection() {
     this.isRtl = !this.isRtl
     document.body.setAttribute('dir', this.isRtl ? 'rtl' : 'ltr')
+    console.info('direction: ', this.isRtl ? 'RTL' : 'LTR');
   }
 
   toggleTheme() {
-    this.isLabmdTheme = !this.isLabmdTheme
+    this.isLabmdTheme = !this.isLabmdTheme;
+    console.info('theme: ', this.isLabmdTheme ? 'LabMD' : 'LabOS');
   }
 
   openDialog() {

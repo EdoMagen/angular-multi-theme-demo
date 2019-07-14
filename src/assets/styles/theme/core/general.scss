@@ -1,102 +1,207 @@
-@import "general";
+@import "mixins";
+@import "colors";
+
+$heightNavbar: 50px;
+$heightBasicLine: 30px;
+$heightSmallLine: 20px;
+$heightGridDymanic: calc(100% - 10px);
+$heightBarBasic: 40px;
+$heightOrderRslt: calc(100% - 445px - 20px);
+$heightPatCreate: calc(100% - 380px - 20px);
+$heightPatResSearch: calc(100% - 255px - 20px);
+$heightListItem: 42px;
+$heightListItemBasic: 35px;
+$heightDropdownList: 5 * $heightListItem;
+$heightDropdownListBasic: 7 * $heightListItemBasic;
+
+$baseSpacing: 5px;
+$baseContainerSpacing: 20px;
+$iconBeforeLinkPadding: 27px;
+$paddingTopRootContainer: $heightNavbar + $baseContainerSpacing;
+$stSpacer: 1rem;
+$stSpacers1: (0: 0, 1: $stSpacer * 0.25, 2: $stSpacer * 0.5, 3: $stSpacer * 0.75, 4: $stSpacer);
+$stSpacers2: (5: $stSpacer * 1.25, 6: $stSpacer * 1.5, 7: $stSpacer * 1.75, 8: $stSpacer * 2);
+$stSpacers: map-merge($stSpacers1, $stSpacers2);
 
 //=====================
-//=     #SPACING     =
-//
-// 0 - for classes that eliminate the margin or padding by setting it to 0
-// 1 - for classes that set the margin or padding to $stSpacer * .25
-// 2 - for classes that set the margin or padding to $stSpacer * .5
-// 3 - for classes that set the margin or padding to $stSpacer * .75
-// 4 - for classes that set the margin or padding to $stSpacer
-// 5 - for classes that set the margin or padding to $stSpacer * 1.25
-// 6 - for classes that set the margin or padding to $stSpacer * 1.5
-// 7 - for classes that set the margin or padding to $stSpacer * 1.75
-// 8 - for classes that set the margin or padding to $stSpacer * 2
-// auto - for classes that set the margin to auto
-//
-// EXAMPLES:
-// .st-mt-0
-//   margin-top: 0 !important
-//
-// .st-px-2
-//   padding-left: ($stSpacer * .5) !important
-//   padding-right: ($stSpacer * .5) !important
-//
-// .st-p-4
-//   padding: $stSpacer !important
-//
-// Bootstrap documentation for spacing
-// https://getbootstrap.com/docs/4.0/utilities/spacing/
+//=      #FONTS       =
 //=====================
 
-@each $prop, $abbrev in (margin: m, padding: p) {
-  @each $size, $length in $stSpacers {
-    .st-#{$abbrev}-#{$size} {
-      #{$prop}: $length !important;
-    }
+$fontSizeHeader1: 24px;
+$fontSizeHeader2: 18px;
+$fontSizeLarge: 16px;
+$fontSizeMedium: 15px;
+$fontSizeHeaderDefault: 14px;
+$fontSizeDefault: 13px;
+$fontSizeSmall: 12px;
 
-    .st-#{$abbrev}t-#{$size},
-    .st-#{$abbrev}y-#{$size} {
-      #{$prop}-top: $length !important;
-    }
+//=====================
+//=     #BORDERS      =
+//=====================
 
-    [dir=ltr] .st-#{$abbrev}r-#{$size},
-    [dir=ltr] .st-#{$abbrev}x-#{$size} {
-      #{$prop}-right: $length !important;
-    }
+$borderBaseSize: 1px;
+$borderSizeTall: 3px;
 
-    [dir=rtl] .st-#{$abbrev}r-#{$size},
-    [dir=rtl] .st-#{$abbrev}x-#{$size} {
-      #{$prop}-left: $length !important;
-    }
+//=====================
+//=      #WIDTH       =
+//=====================
 
-    .st-#{$abbrev}b-#{$size},
-    .st-#{$abbrev}y-#{$size} {
-      #{$prop}-bottom: $length !important;
-    }
+$widthInputDefault: 100%;
+$widthFullWithPadding: calc(100% - 50px);
 
-    [dir=ltr] .st-#{$abbrev}l-#{$size},
-    [dir=ltr] .st-#{$abbrev}x-#{$size} {
-      #{$prop}-left: $length !important;
-    }
+//////////////////////////////////////////////////////////////////////////////////
 
-    [dir=rtl] .st-#{$abbrev}l-#{$size},
-    [dir=rtl] .st-#{$abbrev}x-#{$size} {
-      #{$prop}-right: $length !important;
-    }
+
+// html, body *:not(.material-icons, .zmdi) { // AVOID * rules if possible
+html, body {
+  font-family: "Open Sans", arial, sans-serif !important;
+}
+
+@-ms-viewport {
+  width: auto !important;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+}
+
+body>header {
+  display: inherit;
+}
+
+html,
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, st-root {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  // fix for brackets in rlt
+  unicode-bidi: embed;
+}
+
+st-root {
+  display: block;
+}
+
+/* Box-sizing border-box */
+// * {
+//   box-sizing: border-box;
+// }
+
+p {
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.user-menu {
+  top: 42px;
+  position: absolute;
+}
+
+:focus {
+  outline: 0 !important;
+}
+
+// Causes a bug with ripple effect
+// .mat-checkbox-layout {
+//   white-space: nowrap !important;
+//   overflow: hidden !important;
+//   text-overflow: ellipsis !important;
+// }
+
+button, a {
+  background: none;
+}
+
+.mat-form-field-required-marker {
+  color: $red !important;
+}
+
+.md-18 {
+  height: 18px !important;
+  width: 18px !important;
+  font-size: 18px !important;
+}
+
+.md-11 {
+  height: 11px !important;
+  width: 11px !important;
+  font-size: 11px !important;
+}
+
+[dir] .cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.mat-tab-header-pagination {
+  box-shadow: none !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+//https://jira.softov.co.il/browse/REAL-3570 - changed native behavior
+.mat-tab-label {
+  min-width: 0 !important;
+}
+
+.mde-popover-direction-arrow {
+  border: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.st-layout-row {
+  @include flexrow;
+}
+
+.layout, .st-layout-column, .st-layout-row {
+  box-sizing: border-box;
+
+  @include flexbox;
+}
+
+.st-layout-column.st-center {
+  text-align: center;
+}
+
+.st-primary-bg {
+  background-color: $primary;
+}
+
+// TODO: refactor this
+a {
+  &:not(.mat-button) {
+    color: inherit !important;
   }
 }
 
-.st-m-auto {
-  margin: auto !important;
-}
+.toast-success {
+  background-image: none;
+  padding: 15px !important;
 
-.st-mt-auto,
-.st-my-auto {
-  margin-top: auto !important;
-}
-
-[dir=ltr] .st-mr-auto,
-[dir=ltr] .st-mx-auto {
-  margin-right: auto !important;
-}
-
-[dir=rtl] .st-mr-auto,
-[dir=rtl] .st-mx-auto {
-  margin-left: auto !important;
-}
-
-.st-mb-auto,
-.st-my-auto {
-  margin-bottom: auto !important;
-}
-
-[dir=ltr] .st-ml-auto,
-[dir=ltr] .st-mx-auto {
-  margin-left: auto !important;
-}
-
-[dir=rtl] .st-ml-auto,
-[dir=rtl] .st-mx-auto {
-  margin-right: auto !important;
+  .toast-message {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
 }
