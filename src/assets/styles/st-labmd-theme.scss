@@ -142,3 +142,6 @@ $st-labmd-theme: st-theme-generator(
     $st-labmd-foreground, 
     $st-labmd-background
 );
+
+// Uncomment this for the real project
+// @include st-theme($st-labmd-theme);

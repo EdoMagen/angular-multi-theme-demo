@@ -142,3 +142,6 @@ $st-labos-theme: st-theme-generator(
     $st-labos-foreground, 
     $st-labos-background
 );
+
+// Uncomment this for the real project
+// @include st-theme($st-labos-theme);
