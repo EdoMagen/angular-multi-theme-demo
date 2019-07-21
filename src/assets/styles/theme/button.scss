@@ -19,6 +19,7 @@
   $background: map-get($theme, background);
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
   $appColor: mat-color($primary, $st-default-color-shade);
   $buttonBackground: mat-color($background, background);
   // $warn: map-get($theme, warn);
@@ -34,28 +35,69 @@
     &.mat-stroked-button, 
     &.mat-raised-button, 
     &.mat-flat-button {
-      font-weight: 600;
+      // font-weight: 600;  
       color: $appColor;
       min-width: 30px;
+      transition: all .1s;
+      padding: 0 12px;
+      box-shadow: 0 0 0 white; //base box-shadow so :focus transition works well
       mat-icon {
         line-height: 24px;
+        margin-left: -4px; // pull icon left so it's inlined with the padding
       }
       &:not(:last-child) {
           margin-right: 15px;
+      }
+      &:focus {
+        box-shadow: 0 0 7px lighten(mat-color($primary), 20%);
       }
     }
     // Specific rules
     &.mat-flat-button {
       padding: 0 5px;
     }
+    &.mat-stroked-button {
+      &:not([disabled]) {
+        border: 1px solid rgba(mat-color($primary), .2);
+      }
+      &:hover {
+        background: rgba(mat-color($primary),.05);
+      }
+      &:focus {
+        background: white;
+      }
+    }
     &.mat-button.mat-primary {
       background: mat-color($primary);
       background-color: mat-color($primary);
       color: #ffffff;
+      &:hover {
+        background: darken(mat-color($primary),10%);
+      }
+      &:focus {
+        box-shadow: 0 0 7px lighten(mat-color($primary), 20%);
+      }
     }
     &.mat-button.mat-accent {
       background-color: mat-color($accent);
       color: #ffffff;
+      &:hover {
+        background: darken(mat-color($accent),10%);
+      }
+      &:focus {
+        box-shadow: 0 0 7px lighten(mat-color($accent), 20%);
+      }
+    }
+    &.mat-button.mat-warn {
+      color: #ffffff;
+      background: mat-color($warn);
+      border: 1px solid darken(mat-color($warn),10%);
+      &:hover {
+        background: darken(mat-color($warn),10%);
+      }
+      &:focus {
+        box-shadow: 0 0 7px lighten(mat-color($warn), 20%);
+      }
     }
     &.st-oval-button {
       height: 26px;
@@ -98,6 +140,7 @@
         border-top-left-radius: 0 !important;
         mat-icon {
           line-height: 24px;
+          margin: 0; // override general icon pull
         }
       }
     }
