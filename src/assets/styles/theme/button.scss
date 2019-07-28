@@ -15,6 +15,29 @@
 // }
 */
 
+
+@mixin st-button-generator($backgroundColor, $foregroundColor) {
+  color: $foregroundColor;
+  background: $backgroundColor;
+  &[disabled] {
+    opacity: .3;
+    color: $foregroundColor;
+    &:hover {
+      background: $backgroundColor;
+    }
+  }
+  &:not([disabled]) {
+    border: 1px solid darken($backgroundColor,10%);
+  }
+  &:hover {
+    background: darken($backgroundColor, 10%);
+  }
+  &:focus {
+    box-shadow: 0 0 7px lighten($backgroundColor, 20%);
+  }
+}
+
+
 @mixin st-button-theme($theme) {
   $background: map-get($theme, background);
   $accent: map-get($theme, accent);
@@ -35,7 +58,6 @@
     &.mat-stroked-button, 
     &.mat-raised-button, 
     &.mat-flat-button {
-      // font-weight: 600;  
       color: $appColor;
       min-width: 30px;
       transition: all .1s;
@@ -57,62 +79,33 @@
       padding: 0 5px;
     }
     &.mat-stroked-button {
-      &:not([disabled]) {
-        border: 1px solid rgba(mat-color($primary), .2);
-      }
-      &:hover {
-        background: rgba(mat-color($primary),.05);
-      }
-      &:focus {
-        background: white;
-      }
+      @include st-button-generator(#fff, mat-color($primary));
     }
     &.mat-button.mat-primary {
-      background: mat-color($primary);
-      background-color: mat-color($primary);
-      color: #ffffff;
-      &:hover {
-        background: darken(mat-color($primary),10%);
-      }
-      &:focus {
-        box-shadow: 0 0 7px lighten(mat-color($primary), 20%);
-      }
+      @include st-button-generator(mat-color($primary), #fff);
     }
     &.mat-button.mat-accent {
-      background-color: mat-color($accent);
-      color: #ffffff;
-      &:hover {
-        background: darken(mat-color($accent),10%);
-      }
-      &:focus {
-        box-shadow: 0 0 7px lighten(mat-color($accent), 20%);
-      }
+      @include st-button-generator(mat-color($accent), #fff);
     }
     &.mat-button.mat-warn {
-      color: #ffffff;
-      background: mat-color($warn);
-      border: 1px solid darken(mat-color($warn),10%);
-      &:hover {
-        background: darken(mat-color($warn),10%);
-      }
-      &:focus {
-        box-shadow: 0 0 7px lighten(mat-color($warn), 20%);
-      }
+      @include st-button-generator(mat-color($warn), #fff);
     }
+    // TODO: needs work
     &.st-oval-button {
       height: 26px;
       min-width: auto;
       line-height: 24px;
       font-size: 12px;
       color: $gray;
-      border-radius: 13px !important;
+      border-radius: 50% !important;
       border-color: $superLightGray70;
       padding: 0 10px;
-    
+      .mat-icon {
+        margin: 0;
+      }
       &:hover {
         background-color: $superLightGray;
       }
-    
       .mat-button-wrapper {
         font-weight: 400;
         line-height: 24px;
@@ -134,7 +127,7 @@
       }
       &.more-actions {
         border-left: 1px solid #efefef !important;
-        padding: 0 !important;
+        padding: 0 !important;    
         min-width: 0 !important;
         border-bottom-left-radius: 0 !important;
         border-top-left-radius: 0 !important;
