@@ -52,7 +52,7 @@
       mat-icon {
         line-height: 24px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
-        vertical-align: sub; // is this the best way to center the icon vertically?
+        // vertical-align: sub; // is this the best way to center the icon vertically?
       }
       &:not(:last-child) {
           margin-right: 15px;
