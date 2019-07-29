@@ -87,15 +87,17 @@
     &.mat-button.mat-warn {
       @include st-button-generator(mat-color($warn), #fff);
     }
-    // TODO: needs work
-    &.st-rou-button {
+    &.st-square-button, &.st-round-button {
       padding: 0 5px;
       min-width: auto;
-      border-radius: 50% !important;
       border-color: desaturate(lighten(mat-color($primary), 45%), 35%);
       .mat-icon {
-        margin: 0;
+        margin-left: 0; // Disable icon pull in buttons that contain only icons
       }
+    }
+    // TODO: needs work
+    &.st-round-button {
+      border-radius: 50% !important;
     }
   }
   // Should be in its own component so we have view encapsulation and NO !important
