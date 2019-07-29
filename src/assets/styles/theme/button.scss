@@ -68,13 +68,12 @@
     &.mat-stroked-button {
       // @include st-button-generator(#fff, mat-color($primary));
       // border-color: lighten(mat-color($primary), 10%);
-      &:not([disabled]) {
-        border: 1px solid desaturate(lighten(mat-color($primary), 35%), 35%);
+      &:not([disabled]), &[disabled] {
+        border: 1px solid desaturate(lighten(mat-color($primary), 58%), 30%) !important;
       }
       &[disabled] {
         opacity: .4;
         color: mat-color($primary) !important;
-        border: 1px solid darken(mat-color($primary), 5%);
       }
 
     }
@@ -90,7 +89,7 @@
     &.st-square-button, &.st-round-button {
       padding: 0 5px;
       min-width: auto;
-      border-color: desaturate(lighten(mat-color($primary), 45%), 35%);
+      border-color: desaturate(lighten(mat-color($primary), 80%), 35%);
       .mat-icon {
         margin-left: 0; // Disable icon pull in buttons that contain only icons
       }
@@ -114,7 +113,6 @@
         }
       }
       &.more-actions {
-        border-left: 1px solid desaturate(lighten(mat-color($primary), 35%), 35%) !important;
         padding: 0 !important;    
         min-width: 0 !important;
         border-bottom-left-radius: 0 !important;
