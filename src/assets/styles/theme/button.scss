@@ -88,7 +88,7 @@
       @include st-button-generator(mat-color($warn), #fff);
     }
     // TODO: needs work
-    &.st-oval-button {
+    &.st-rou-button {
       padding: 0 5px;
       min-width: auto;
       border-radius: 50% !important;
