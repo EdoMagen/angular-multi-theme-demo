@@ -4,6 +4,9 @@
 @mixin st-button-generator($backgroundColor, $foregroundColor) {
   color: $foregroundColor;
   background: $backgroundColor;
+  mat-icon {
+    color: $foregroundColor;
+  }
   &:not([disabled]) {
     border: 1px solid darken($backgroundColor, 5%);
   }
@@ -52,11 +55,7 @@
       }
     }
     // Primary / Accent / Warn rules
-    &.mat-primary, &.mat-accent, &.mat-warn {
-      mat-icon {
-        color: #fff;
-      }
-    }
+
     &.mat-button.mat-primary {
       @include st-button-generator(mat-color($primary), #fff);
     }
