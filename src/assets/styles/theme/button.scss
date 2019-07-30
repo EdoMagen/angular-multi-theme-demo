@@ -44,6 +44,7 @@
       mat-icon {
         line-height: 24px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
+        vertical-align: sub;
       }
       &:not(:last-child) {
           margin-right: 15px;
