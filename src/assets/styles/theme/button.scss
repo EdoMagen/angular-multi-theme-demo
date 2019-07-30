@@ -40,7 +40,6 @@
       min-width: 30px;
       transition: all .1s;
       padding: 0 12px;
-      box-shadow: 0 0 0 white; //base box-shadow so :focus transition works well
       mat-icon {
         height: 20px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
