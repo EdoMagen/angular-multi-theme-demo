@@ -55,27 +55,40 @@
       <mat-card-content>
         <h2 class="example-h2">Material Button</h2>
         <h4>Flat button</h4>
-        <button class="st-button" mat-flat-button>Flat</button>
-        <button class="st-button" mat-flat-button><mat-icon>android</mat-icon>Flat w/ icon</button>
-        <h4>Stroked button</h4>
-        <button class="st-button" mat-stroked-button mat-tooltip="This is a tooltip!">Stroked</button>
-        <button class="st-button" mat-stroked-button><mat-icon>add</mat-icon> Stroked+icon</button>
-        <button class="st-button" mat-stroked-button mat-tooltip="This is a tooltip!" disabled>Stroked disabled</button>
+        <button class="st-button" mat-flat-button>Default</button>
+        <button class="st-button" mat-flat-button><mat-icon>android</mat-icon>With icon</button>
         <h4>Primary button</h4>
-        <button class="st-button" mat-button color="primary">Primary</button>
-        <button class="st-button" mat-button color="primary"><mat-icon >done</mat-icon>Primary+icon</button>
-        <button class="st-button" mat-button color="primary" disabled>Primary disabled</button>
+        <button class="st-button" mat-button color="primary">Default</button>
+        <button class="st-button" mat-button color="primary"><mat-icon >done</mat-icon>With icon</button>
+        <button class="st-button" mat-button color="primary" disabled>Disabled</button>
         <h4>Accent button</h4>
-        <button class="st-button" mat-button color="accent">Accent</button>
-        <button class="st-button" mat-button color="accent"><mat-icon >done</mat-icon>Accent+icon</button>
-        <button class="st-button" mat-button color="accent" disabled>Accent disabled</button>
+        <button class="st-button" mat-button color="accent">Default</button>
+        <button class="st-button" mat-button color="accent"><mat-icon >done</mat-icon>With icon</button>
+        <button class="st-button" mat-button color="accent" disabled>Disabled</button>
         <h4>Warn button</h4>
-        <button class="st-button" mat-button color="warn">Warn</button>
-        <button class="st-button" mat-button color="warn"><mat-icon >done</mat-icon>Warn+icon</button>
-        <button class="st-button" mat-button color="warn" disabled>Warn disabled</button>
-        <h4>Square / round button</h4>
+        <button class="st-button" mat-button color="warn">Default</button>
+        <button class="st-button" mat-button color="warn"><mat-icon >done</mat-icon>With icon</button>
+        <button class="st-button" mat-button color="warn" disabled>Disabled</button>
+        <h4>Stroked button</h4>
+        <button class="st-button" mat-stroked-button>Default</button>
+        <button class="st-button" mat-stroked-button><mat-icon>add</mat-icon> With icon</button>
+        <button class="st-button" mat-stroked-button disabled>Disabled</button>
+        <h5>Sizes</h5>
+        <button class="st-button large" mat-stroked-button>Large</button>
+        <button class="st-button" mat-stroked-button>Default</button>
+        <button class="st-button small" mat-stroked-button>Small</button>
+        <button class="st-button x-small" mat-stroked-button>X-small</button>
+        <h4>Square / round button (.large, default, .small, .x-small</h4>
+        <!-- square -->
+        <button class="st-square-button large" mat-stroked-button><mat-icon>add</mat-icon></button>
         <button class="st-square-button" mat-stroked-button><mat-icon>add</mat-icon></button>
-        <button class="st-round-button" mat-stroked-button ><mat-icon>add</mat-icon></button>
+        <button class="st-square-button small" mat-stroked-button><mat-icon>add</mat-icon></button>
+        <button class="st-square-button x-small" mat-stroked-button><mat-icon>add</mat-icon></button>
+        <!-- round -->
+        <button class="st-round-button large" mat-stroked-button ><mat-icon>search</mat-icon></button>
+        <button class="st-round-button" mat-stroked-button ><mat-icon>search</mat-icon></button>
+        <button class="st-round-button small" mat-stroked-button ><mat-icon>search</mat-icon></button>
+        <button class="st-round-button x-small" mat-stroked-button ><mat-icon>search</mat-icon></button>
         <h4>Menu button</h4>
         <div class="st-menu-button">
           <!-- Primary button -->

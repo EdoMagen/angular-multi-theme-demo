@@ -89,14 +89,38 @@
           opacity: 0; // Hide material gray tint
         }
       }
+      &.large {
+        height: 44px;
+      }
+      &.small {
+        height: 30px;
+        line-height: 28px;
+        padding: 0 9px;
+      }
+      &.x-small {
+        height: 24px;
+        line-height: 22px;
+        padding: 0 7px;
+        font-size: 13px;
+      }
     }
-    // Icon only buttons
+    // Icon only buttons - include inside stroked-button?
     &.st-square-button, &.st-round-button {
       padding: 0 5px;
       min-width: auto;
       border-color: desaturate(lighten(mat-color($primary), 80%), 35%);
       .mat-icon {
         margin-left: 0; // Disable icon pull in buttons that contain only icons
+      }
+      &.large {
+        width: 44px;
+      }
+      &.small {
+        padding: 0 2px;
+      }
+      &.x-small {
+        padding: 0;
+        width: 24px;
       }
     }
     &.st-round-button {
