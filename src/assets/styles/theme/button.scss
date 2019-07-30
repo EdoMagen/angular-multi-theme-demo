@@ -42,9 +42,8 @@
       padding: 0 12px;
       box-shadow: 0 0 0 white; //base box-shadow so :focus transition works well
       mat-icon {
-        line-height: 24px;
+        height: 20px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
-        vertical-align: sub;
       }
       &:not(:last-child) {
           margin-right: 15px;
@@ -124,7 +123,6 @@
         border-bottom-left-radius: 0 !important;
         border-top-left-radius: 0 !important;
         mat-icon {
-          line-height: 24px;
           margin: 0; // override general icon pull
         }
       }
