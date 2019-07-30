@@ -17,10 +17,6 @@ mat-sidenav-container.labmd {
   }
 }
 
-.st-button, .st-menu-button, .st-round-button, .st-square-button  {
-  margin-top: 5px;
-}
-
 ///////////////////////////////////
 // Move these to a proper file
 //
@@ -48,6 +44,9 @@ mat-sidenav-container.labmd {
 
 .example-h3 {
   color: rgba(0,0,0,0.54);
+}
+h4 {
+  margin: 10px 0;
 }
 
 .example-section {

@@ -36,7 +36,7 @@
     &.mat-stroked-button, 
     &.mat-raised-button, 
     &.mat-flat-button {
-      color: mat-color($primary, primary);;
+      color: mat-color($primary, 500);
       min-width: 30px;
       transition: all .1s;
       padding: 0 12px;
@@ -55,12 +55,21 @@
     // Specific rules
     &.mat-button.mat-primary {
       @include st-button-generator(mat-color($primary), #fff);
+      mat-icon {
+        color: #fff;
+      }
     }
     &.mat-button.mat-accent {
       @include st-button-generator(mat-color($accent), #fff);
+      mat-icon {
+        color: #fff;
+      }
     }
     &.mat-button.mat-warn {
       @include st-button-generator(mat-color($warn), #fff);
+      mat-icon {
+        color: #fff;
+      }
     }
     &.mat-flat-button {
       padding: 0 5px;
