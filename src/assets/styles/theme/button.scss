@@ -106,7 +106,7 @@
     }
     // Icon only buttons - include inside stroked-button?
     &.st-square-button, &.st-round-button {
-      padding: 0 px;
+      padding: 0 8px;
       min-width: auto;
       border-color: desaturate(lighten(mat-color($primary), 80%), 35%);
       .mat-icon {
