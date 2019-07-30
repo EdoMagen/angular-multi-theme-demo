@@ -65,12 +65,12 @@
     }
     &.mat-button.mat-warn {
       @include st-button-generator(mat-color($warn), #fff);
-
     }
     &.mat-flat-button {
       padding: 0 5px;
     }
     &.mat-stroked-button {
+      background: #fff;
       &:not([disabled]), &[disabled] {
         border: 1px solid desaturate(lighten(mat-color($primary), 58%), 30%);
       }
@@ -79,7 +79,6 @@
         color: mat-color($primary) !important;
       }
       &:focus {
-        background: #fff;
         box-shadow: 0 0 7px desaturate(lighten(mat-color($primary), 58%), 30%);
         .mat-button-focus-overlay {
           opacity: 0; // Hide material gray tint
