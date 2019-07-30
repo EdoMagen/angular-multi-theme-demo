@@ -106,17 +106,18 @@
     }
     // Icon only buttons - include inside stroked-button?
     &.st-square-button, &.st-round-button {
-      padding: 0 5px;
+      padding: 0 px;
       min-width: auto;
       border-color: desaturate(lighten(mat-color($primary), 80%), 35%);
       .mat-icon {
         margin-left: 0; // Disable icon pull in buttons that contain only icons
+        width: 18px;
       }
       &.large {
         width: 44px;
       }
       &.small {
-        padding: 0 2px;
+        padding: 0 5px;
       }
       &.x-small {
         padding: 0;
