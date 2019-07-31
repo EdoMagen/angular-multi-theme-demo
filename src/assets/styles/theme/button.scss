@@ -46,9 +46,10 @@
       mat-icon {
         height: 20px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
+        margin-right: 4px; //space from text
       }
       &:not(:last-child) {
-          margin-right: 15px;
+          margin-right: 1px;
       }
       &:focus {
         box-shadow: 0 0 1px lighten(mat-color($primary), 80%);
@@ -104,7 +105,7 @@
       min-width: auto;
       border-color: desaturate(lighten(mat-color($primary), 80%), 35%);
       .mat-icon {
-        margin-left: 0; // Disable icon pull in buttons that contain only icons
+        margin: 0; // Disable icon pull / text push in buttons that contain only icons
         width: 18px;
       }
       &.large {
