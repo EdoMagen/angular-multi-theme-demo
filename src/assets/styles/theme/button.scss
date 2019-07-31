@@ -28,7 +28,6 @@
 }
 
 @mixin st-button-theme($theme) {
-  $background: map-get($theme, background);
   $accent: map-get($theme, accent);
   $primary: map-get($theme, primary);
   $warn: map-get($theme, warn);
@@ -50,14 +49,27 @@
         margin-right: 4px; // space from text
       }
       &:not(:last-child) {
-          margin-right: 10px;
+        margin-right: 10px;
       }
       &:focus {
         box-shadow: 0 0 1px lighten(mat-color($primary), 80%);
       }
+      &.large {
+        height: 44px;
+      }
+      &.small {
+        height: 30px;
+        line-height: 28px;
+        padding: 0 9px;
+      }
+      &.x-small {
+        height: 24px;
+        line-height: 22px;
+        padding: 0 7px;
+        font-size: 13px;
+      }
     }
     // Primary / Accent / Warn rules
-
     &.mat-button.mat-primary {
       @include st-button-generator(mat-color($primary), #fff);
     }
@@ -84,20 +96,6 @@
         .mat-button-focus-overlay {
           opacity: 0; // Hide material gray tint
         }
-      }
-      &.large {
-        height: 44px;
-      }
-      &.small {
-        height: 30px;
-        line-height: 28px;
-        padding: 0 9px;
-      }
-      &.x-small {
-        height: 24px;
-        line-height: 22px;
-        padding: 0 7px;
-        font-size: 13px;
       }
     }
     // Icon only buttons - include inside stroked-button?
