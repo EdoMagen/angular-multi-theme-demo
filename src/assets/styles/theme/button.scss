@@ -49,7 +49,7 @@
         margin-right: 4px; //space from text
       }
       &:not(:last-child) {
-          margin-right: 1px;
+          margin-right: 10px;
       }
       &:focus {
         box-shadow: 0 0 1px lighten(mat-color($primary), 80%);
