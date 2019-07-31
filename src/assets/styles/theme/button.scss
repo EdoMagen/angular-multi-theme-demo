@@ -43,10 +43,11 @@
       min-width: 30px;
       transition: all .1s;
       padding: 0 12px;
+      line-height: 34px;
       mat-icon {
         height: 20px;
         margin-left: -4px; // pull icon left so it's inlined with the padding
-        margin-right: 4px; //space from text
+        margin-right: 4px; // space from text
       }
       &:not(:last-child) {
           margin-right: 10px;
