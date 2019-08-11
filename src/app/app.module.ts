@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from './app.material.module';
-import { AppComponent, DialogContentComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { StForm } from './components/form/st-form.component';
 import { StChipInputComponent } from './components/chip/st-chip-input.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   imports: [
@@ -18,8 +19,8 @@ import { StChipInputComponent } from './components/chip/st-chip-input.component'
     AppMaterialModule,
     BrowserAnimationsModule
   ],
-  declarations: [AppComponent, DialogContentComponent, StForm, StChipInputComponent],
-  entryComponents: [DialogContentComponent],
+  declarations: [AppComponent, StForm, StChipInputComponent, DialogComponent],
+  entryComponents: [DialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

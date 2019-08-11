@@ -1,0 +1,30 @@
+    <!-- Dialog title - always include cdkDrag -->
+    <div matDialogTitle cdkDrag cdkDragHandle cdkDragRootElement=".cdk-global-overlay-wrapper">
+      <span>Dialog title</span>
+      <button mat-button [matDialogClose]=""><mat-icon>close</mat-icon></button>
+    </div>
+    <!-- Dialog content -->
+    <div matDialogContent>
+      <mat-form-field class="w-100">
+        <input matInput #dialogInput placeholder="This is a text box inside of a dialog.">
+      </mat-form-field>
+      <h3 class="example-h3">Horizontal</h3>
+      <div class="st-flex-row">
+        <mat-checkbox color="warn">Unchecked warn</mat-checkbox>
+        <mat-checkbox [checked]="true">Checked accent</mat-checkbox>
+        <mat-checkbox [indeterminate]="true" color="primary">Indeterminate primary</mat-checkbox>
+        <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+      </div>
+      <h3 class="example-h3">Vertical</h3>
+      <div class="st-flex-column">
+        <mat-checkbox color="warn">Unchecked warn</mat-checkbox>
+        <mat-checkbox [checked]="true">Checked accent</mat-checkbox>
+        <mat-checkbox [indeterminate]="true" color="primary">Indeterminate primary</mat-checkbox>
+        <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+      </div>
+    </div>
+    <!-- Dialog actions -->
+    <div matDialogActions>
+      <button class="st-button" mat-stroked-button [matDialogClose]="">CLOSE</button>
+      <button class="st-button" mat-button color="accent" [matDialogClose]="dialogInput.value">SUBMIT</button>
+    </div>

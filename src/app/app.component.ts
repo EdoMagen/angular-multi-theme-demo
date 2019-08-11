@@ -1,5 +1,6 @@
 import { Component, Optional } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @Component({
   selector: 'st-root',
@@ -78,7 +79,7 @@ export class AppComponent {
 
   openDialog() {
     const diaglogCssClass = this.isLabmdTheme ? 'labmd' : 'labos';
-    const dialogRef = this._dialog.open(DialogContentComponent,{ panelClass: diaglogCssClass });
+    const dialogRef = this._dialog.open(DialogComponent,{ panelClass: diaglogCssClass });
 
     dialogRef.afterClosed().subscribe(result => {
       this.lastDialogResult = result;
@@ -97,40 +98,4 @@ export class AppComponent {
   set tickInterval(v) {
     this.slider.tickInterval = Number(v);
   }
-}
-
-
-@Component({
-  template: `
-    <div matDialogTitle cdkDrag cdkDragRootElement=".cdk-global-overlay-wrapper" cdkDragHandle>
-      <span>Dialog title</span>
-      <button mat-button [matDialogClose]=""><mat-icon>close</mat-icon></button>
-    </div>
-    <div matDialogContent>
-      <mat-form-field class="w-100">
-        <input matInput #dialogInput placeholder="This is a text box inside of a dialog.">
-      </mat-form-field>
-      <h3 class="example-h3">Horizontal</h3>
-      <div class="st-flex-row">
-        <mat-checkbox color="warn">Unchecked warn</mat-checkbox>
-        <mat-checkbox [checked]="true">Checked accent</mat-checkbox>
-        <mat-checkbox [indeterminate]="true" color="primary">Indeterminate primary</mat-checkbox>
-        <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
-      </div>
-      <h3 class="example-h3">Vertical</h3>
-      <div class="st-flex-column">
-        <mat-checkbox color="warn">Unchecked warn</mat-checkbox>
-        <mat-checkbox [checked]="true">Checked accent</mat-checkbox>
-        <mat-checkbox [indeterminate]="true" color="primary">Indeterminate primary</mat-checkbox>
-        <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
-      </div>
-    </div>
-    <div matDialogActions>
-      <button class="st-button" mat-stroked-button [matDialogClose]="">CLOSE</button>
-      <button class="st-button" mat-button color="accent" [matDialogClose]="dialogInput.value">SUBMIT</button>
-    </div>
-  `,
-})
-export class DialogContentComponent {
-  constructor( @Optional() public dialogRef: MatDialogRef<DialogContentComponent>) { }
 }
