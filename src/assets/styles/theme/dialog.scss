@@ -74,6 +74,9 @@
       background: gray;
       padding-left: 20px;
       line-height: 40px;
+      &.cdk-drag {
+        cursor: move;
+      }
       button {
         padding: 0;
         border-radius: 50%;

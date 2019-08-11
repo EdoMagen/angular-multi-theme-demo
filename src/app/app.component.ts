@@ -102,7 +102,7 @@ export class AppComponent {
 
 @Component({
   template: `
-    <div matDialogTitle>
+    <div matDialogTitle cdkDrag cdkDragRootElement=".cdk-global-overlay-wrapper" cdkDragHandle>
       <span>Dialog title</span>
       <button mat-button [matDialogClose]=""><mat-icon>close</mat-icon></button>
     </div>
